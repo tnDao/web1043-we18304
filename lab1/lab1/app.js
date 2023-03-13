@@ -11,3 +11,4 @@ document.write(c)
 console.log(c);
 alert(result)
 console.log(result);
+kd
