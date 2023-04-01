@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Form Email</title>
+    <style>
+      /* CSS code here */
+    </style>
+  </head>
+  <body>
+    <<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>To-do List</title>
+        <style>
+          /* CSS code here */
+        </style>
+      </head>
+      <body>
+        <h1>To-do List</h1>
+    
+        <form id="add-form">
+          <label for="name">Task name:</label>
+          <input type="text" id="name" name="name" required minlength="6">
+    
+          <label for="description">Task description:</label>
+          <textarea id="description" name="description" rows="3" required minlength="21"></textarea>
+    
+          <button type="submit">Add task</button>
+        </form>
+    
+        <ul id="task-list"></ul>
+    
+        <script>
+          const taskList = document.getElementById("task-list");
+          const addForm = document.getElementById("add-form");
+    
+          // Add a new task to the list
+          function addTask(name, description) {
+            const task = document.createElement("li");
+            const deleteButton = document.createElement("button");
+            const editButton = document.createElement("button");
+    
+            task.innerHTML = "<b>" + name + "</b>: " + description;
+    
+            deleteButton.innerText = "Delete";
+            deleteButton.addEventListener("click", function() {
+              task.remove();
+            });
+    
+            editButton.innerText = "Edit";
+            editButton.addEventListener("click", function() {
+              const newName = prompt("Enter new task name:", name);
+              const newDescription = prompt("Enter new task description:", description);
+    
+              if (newName && newDescription) {
+                task.innerHTML = "<b>" + newName + "</b>: " + newDescription;
+              }
+            });
+    
+            task.appendChild(deleteButton);
+            task.appendChild(editButton);
+            taskList.appendChild(task);
+          }
+    
+          // Handle form submission
+          addForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            const name = document.getElementById("name").value;
+            const description = document.getElementById("description").value;
+    
+            if (name.length < 6 || description.length < 21) {
+              alert("Name must be at least 6 characters and description must be at least 21 characters.");
+              return;
+            }
+    
+            addTask(name, description);
+    
+            addForm.reset();
+          });
+        </script>
+      </body>
+    </html>
+    
+  </body>
+</html>
+
+</body>
+</html>
