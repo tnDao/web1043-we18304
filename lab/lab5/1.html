@@ -17,16 +17,8 @@
     </style>
   </head>
   <body>
-    <<!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="UTF-8">
-        <title>To-do List</title>
-        <style>
-          /* CSS code here */
-        </style>
-      </head>
-      <body>
+  
+      
         <h1>To-do List</h1>
     
         <form id="add-form">
@@ -42,13 +34,13 @@
         <ul id="task-list"></ul>
     
         <script>
-          const taskList = document.getElementById("task-list");
+          const taskList = document.getElementById("task-list");  // lấy thành phân id 
           const addForm = document.getElementById("add-form");
     
-          // Add a new task to the list
+          // thêm các task 
           function addTask(name, description) {
             const task = document.createElement("li");
-            const deleteButton = document.createElement("button");
+            const deleteButton = document.createElement("button"); // tạo phân tử mới 
             const editButton = document.createElement("button");
     
             task.innerHTML = "<b>" + name + "</b>: " + description;
@@ -59,7 +51,7 @@
             });
     
             editButton.innerText = "Edit";
-            editButton.addEventListener("click", function() {
+            editButton.addEventListener("click", function() { // thêm thành phần click 
               const newName = prompt("Enter new task name:", name);
               const newDescription = prompt("Enter new task description:", description);
     
@@ -73,7 +65,7 @@
             taskList.appendChild(task);
           }
     
-          // Handle form submission
+          //  xử lý form 
           addForm.addEventListener("submit", function(event) {
             event.preventDefault();
     
@@ -89,12 +81,6 @@
     
             addForm.reset();
           });
-        </script>
-      </body>
-    </html>
-    
-  </body>
-</html>
-
+        </script>D
 </body>
 </html>
