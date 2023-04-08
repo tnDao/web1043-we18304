@@ -53,12 +53,13 @@ body {
     height: fit-content;
     flex-direction: row;
     justify-content: space-between;
-    text-align: center;
-    
+    text-align: center;   
+    position: relative; 
 }
 .navbar {
-    position: fixed;
     top: 0;
+    z-index: 8;
+    
 }
 #wrapper .header .menu .menu__main {
     right: 250px;
@@ -552,7 +553,9 @@ form .input-box {
     width: 100%;
     margin-right: 20px;
 }
-
+form.valid .input-box  input.input{
+    border-color: #4671EA;
+}
 .input-box input.button {
     position: absolute;
     width: 25%;
@@ -572,6 +575,57 @@ form .input-box {
     margin-top: 24px;
     left: 15px;
 }
+form.valid i.fa-envelope{
+    color: #1748cf;
+}
+form.error i.fa-envelope{
+    color: #de0611;
+}
+.input-box input.input:focus ~ i.fa-envelope{
+    color: #361cc1
+}
+.input-box .fa-circle-xmark,
+.input-box .fa-check
+{
+    color: #de0611;
+    left: calc(75% - 90px);
+    display: none;
+}
+.input-box .fa-circle-xmark{
+    color: #de0611;
+    font-size: 30px;
+}
+
+form.error .fa-circle-xmark{
+    display: block;
+}
+.input-box input.input:focus{
+    border-color: #4671EA;
+}
+form.error input.input{
+    border-color: #de0611;
+}
+form.valid .fa-check{
+    display: block;
+}
+.input-box .fa-check{
+    color: #1748cf;
+}
+form .text {
+    display: flex;
+    color: #de0611;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0 -10px 2px;
+    bottom: -20px;
+    flex-direction: row;
+    position: absolute;
+}
+form.valid .text{
+    color: #1748cf;
+}
+
+
 .footer .footer__sub .col4 .form input {
     border: 2px solid #e1e1e1;
     height: 65px;
@@ -603,8 +657,8 @@ form .input-box {
 }
 
 .footer .footer__widget {
-    padding-top: 175px;
-    margin-bottom: 25px;
+    padding-top: 134px;
+    margin-bottom: 7px;
 }
 
 .footer .footer__widget .row6 {
@@ -689,4 +743,66 @@ form .input-box {
     background-size: cover;
     background-position: center top;
     margin-top: 460vh;
+}
+
+/* form download now css */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: none;
+}
+
+#myForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 20;
+    padding: 20px;
+    display: none;
+}
+
+#myForm h2 {
+    text-align: center;
+}
+
+#myForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#myForm input[type="text"],
+#myForm input[type="email"],
+#myForm input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+#myForm input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#closeForm {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+
+#closeForm:hover {
+    color: black;
+    
 }

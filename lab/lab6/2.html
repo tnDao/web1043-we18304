@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inputFocus{
+            border: 1px solid rgb(75, 75, 234);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input class="input1" type="text" id="inputUse" >
+        <input class="input2" type="text" id="inputPass">
+    </div>
+    <script>
+        let inputUse = document.getElementById("inputUse")
+        let inputPass = document.getElementById("inputUse")
+        
+        inputUse.addEventListener("focus", ()=> {
+            inputUse.classList.toggle("inputFocus")
+        })
+        inputUse.addEventListener("blur", ()=> {
+            inputUse.classList.toggle("inputFocus")
+        })
+        inputPass.addEventListener("focus", ()=> {
+            inputUse.classList.add("inputFocus")
+        })
+        inputUse.addEventListener("blur", ()=> {
+            inputUse.classList.remove("inputFocus")
+        })
+    </script>
+</body>
+</html>

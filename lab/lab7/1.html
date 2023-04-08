@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 50%;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+        }
+
+        .leftc {
+            width: 300px;
+            height: 700px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .rightc {
+            
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .item{
+            margin: 10px;
+            border: 1px dashed black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="bin" class="leftc">
+            Bin
+        </div>
+        <div class="rightc">
+            <span class="item" id="one">one</span>
+            <span class="item" id="two">two</span>
+            <span class="item" id="three">three</span>
+            <span class="item" id="four">four</span>
+            <span class="item" id="five" >five</span>
+        </div>
+    </div>
+    <script>
+        let items = document.getElementsByClassName("item")
+
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+            item.setAttribute("draggable", true);
+            item.addEventListener("dragstart", (e) => {
+                e.dataTransfer.setData("itemId", item.id);
+            });
+        }
+
+        let bin = document.getElementById("bin");
+        bin.addEventListener("dragover", (e) => {
+            if (e.preventDefault) e.preventDefault();
+        });
+        bin.addEventListener("drop", (e) => {
+            let itemId = e.dataTransfer.getData("itemId");
+            let item = document.getElementById(itemId);
+            bin.appendChild(item);
+        });
+
+
+    </script>
+</body>
+
+</html>

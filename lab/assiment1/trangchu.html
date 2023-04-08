@@ -24,8 +24,20 @@
                             <li><a href="#">Why</a></li>
                             <li><a href="#">Team</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><a href=""><button class="dow">Download now</button></a></li>
+                            <li><a href=""><button class="dow" id="openForm">Download now</button></a></li>
                         </ul>
+                    </div>
+                    <div id="overlay"></div>
+                    <div id="myForm">
+                        <h2>Form</h2>
+                        <form id="form">
+                            <label for="name">Tên:</label>
+                            <input type="text" id="name" name="name"><br><br>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email"><br><br>
+                            <input type="submit" value="Gửi">
+                        </form>
+                        <button id="closeForm"><i class="fa fa-times"></i></button>
                     </div>
                     <div id="backtop">
                         <i class="fa-sharp fa-solid fa-chevron-up"></i>
@@ -303,7 +315,7 @@
                 </div>
 
             </section>
-            <footer class="footer footer-area" >
+            <footer class="footer footer-area">
                 <div class="container2">
                     <div class="footer__sub">
                         <div class="row5">
@@ -316,12 +328,15 @@
                                 </div>
                             </div>
                             <div class="col4">
-                                <form action="">
+                                <form action="" id="formEmail">
                                     <div class="input-box">
                                         <input class="input" type="text" placeholder="Enter your email">
                                         <i class="fa-solid fa-envelope"></i>
+                                        <i class="fa-regular fa-circle-xmark"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         <input class="button" type="submit" value="Check">
                                     </div>
+                                    <p class="text"></p>
                                 </form>
                             </div>
                         </div>
@@ -331,7 +346,7 @@
                     <div class="row6">
                         <div class="col6">
                             <div class="footer__about">
-                                <div style="margin-top: 126px;" class="logo_footer" ></div>
+                                <div style="margin-top: 126px;" class="logo_footer"></div>
                                 <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod
                                     tempor invidunt ut labore et dolore magna aliquyam.</p>
                                 <ul class="social1">
@@ -391,13 +406,14 @@
                 <div class="footer__copyright">
                     <p style="color: white;">Designed and Developed by UIdeck</p>
                 </div>
-                </div>
-            </footer>
         </div>
-        <div class="img_footer">
-            <!-- <img src="img/footer-bg.svg" alt=""> -->
-        </div>
+        </footer>
     </div>
+    <div class="img_footer">
+        <!-- <img src="img/footer-bg.svg" alt=""> -->
+    </div>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="app.js"></script>

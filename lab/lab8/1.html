@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <video id="myVideo" width="320" height="240">
+        Your browser does not support the video tag.
+        <source src="AN VŨ - (Full) Chạm Khẽ Tim Anh Một Chút Thôi - St- Tăng Nhật Tuệ - Anh yêu cô gái nhỏ bé....mp4" type="video/mp4">
+    </video>
+
+    <div id="controls">
+        <button id="playPause">Play</button>
+        <button id="stop">Stop</button>
+        <button id="volumeUp">Volume Up</button> 
+        <button id="volumeDown">Volume Down</button>
+        <button id="loop">Loop</button>
+
+    </div>
+
+    <script>
+        // Nhận các phần tử và điều kiển lấy các ID 
+        const video = document.getElementById("myVideo");
+        const playPauseBtn = document.getElementById("playPause");
+        const stopBtn = document.getElementById("stop");
+        const volumeUpBtn = document.getElementById("volumeUp");
+        const volumeDownBtn = document.getElementById("volumeDown");
+        const loopBtn = document.getElementById("loop");
+
+        // Khi click vào nút phay video sẽ chuyển nút phay thành pause và ngược lại đồng thời bắt sự kiện video phát và ngược lại 
+        playPauseBtn.addEventListener("click", function () {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.innerHTML = "Pause";
+            } else {
+                video.pause();
+                playPauseBtn.innerHTML = "Play";
+            }
+        });
+
+        // Khi stop video thì video dừng lại đồng thời nút set nút pause thành nút phay 
+        stopBtn.addEventListener("click", function () {
+            video.pause();
+            video.currentTime = 0;
+            playPauseBtn.innerHTML = "Play";
+        });
+
+        // Lắng nghe sự kiện click và nút button âm thanh sẽ được tăng lên
+        volumeUpBtn.addEventListener("click", function () {
+            if (video.volume < 1.0) {
+                video.volume += 0.1;
+            }
+        });
+
+        // Lắng nghe sự kiện click và nút button âm thanh sẽ được giảm đi 
+        volumeDownBtn.addEventListener("click", function () {
+            if (video.volume > 0.0) {
+                video.volume -= 0.1;
+            }
+        });
+
+        // Khi click vào loop thì sau khi bài hát kết thúc thì sẽ lặp lại 
+        loopBtn.addEventListener("click", function () {
+            if (video.loop) {
+                video.loop = false;
+                loopBtn.innerHTML = "Loop";
+            } else {
+                video.loop = true;
+                loopBtn.innerHTML = "Unloop";
+            }
+        });
+
+    </script>
+</body>
+
+</html>
