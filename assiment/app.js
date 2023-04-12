@@ -26,6 +26,11 @@ function showSlides(n) {
   }
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
+  
+  
+  setTimeout(function() {
+    plusSlides(1);
+  }, 5000);
 }
 
 // menu cuộn 
@@ -67,19 +72,5 @@ $(document).ready(function () {
     }, 1000)
   })
 })
-//js for download now 
-const openBtn = document.getElementById("openForm");
-const closeBtn = document.getElementById("closeForm");
-const formdow = document.getElementById("myForm");
-const overlay = document.getElementById("overlay");
 
-openBtn.addEventListener("click", function () {
-  overlay.style.display = "block";
-  formdow.style.display = "block";
-});
-
-closeBtn.addEventListener("click", function () {
-  overlay.style.display = "none";
-  formdow.style.display = "none";
-});
 
